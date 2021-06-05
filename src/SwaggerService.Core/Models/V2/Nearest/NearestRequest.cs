@@ -55,7 +55,7 @@ namespace SwaggerService.Core.Models.V2.Nearest
         /// </summary>
         /// <remark>Limits the search to given radius in meters</remark>
         [DefaultValue(1)]
-        [Range(1, int.MaxValue, ErrorMessage = "Value must be greater than or equal to 1")]
+        [Range(0, int.MaxValue, ErrorMessage = "Value must be greater than or equal to 1")]
         public int number { get; set; }
 
         /// <summary>

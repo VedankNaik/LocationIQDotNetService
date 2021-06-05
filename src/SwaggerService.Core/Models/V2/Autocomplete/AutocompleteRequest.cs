@@ -38,7 +38,7 @@ namespace SwaggerService.Core.Models.V2.Autocomplete
         /// </summary>
         /// <remark>Limit the number of returned results</remark>
         [DefaultValue(10)]
-        [Range(1, 20, ErrorMessage = "Value for {0} must be between {1} and {2}")]
+        // [Range(1, 20, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public int limit { get; set; }
 
         /// <summary>

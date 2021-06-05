@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using SwaggerService.Core.Models.Features;
 using SwaggerService.Core.Models.Service;
 
 namespace SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1

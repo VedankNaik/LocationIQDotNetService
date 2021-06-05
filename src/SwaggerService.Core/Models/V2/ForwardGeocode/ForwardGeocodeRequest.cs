@@ -66,7 +66,7 @@ namespace SwaggerService.Core.Models.V2.ForwardGeocode
         /// </summary>
         /// <remark>Limit the number of returned results</remark>
         [DefaultValue(10)]
-        [Range(1, 50, ErrorMessage = "Value for {0} must be between {1} and {2}")]
+        // [Range(0, 50, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public int limit { get; set; }
 
         /// <summary>

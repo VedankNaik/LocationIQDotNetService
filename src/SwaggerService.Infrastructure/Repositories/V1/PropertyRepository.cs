@@ -18,8 +18,6 @@ namespace SwaggerService.Infrastructure.Repositories.V1
     {
         #region Constants
 
-        private const string SprFeatureGet = "[AUTH].[FeatureGet]";
-
         protected readonly IMapper Mapper;
 
         private string connectionString;

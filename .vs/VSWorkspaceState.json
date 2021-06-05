@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\SwaggerService.Infrastructure"
+    "\\src"
   ],
-  "SelectedNode": "\\src\\SwaggerService.Infrastructure\\SwaggerService.Infrastructure.csproj",
+  "SelectedNode": "\\src\\SwaggerService.Infrastructure",
   "PreviewInSolutionExplorer": false
 }

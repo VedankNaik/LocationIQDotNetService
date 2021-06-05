@@ -29,7 +29,7 @@ namespace SwaggerService.Core.Models.V2.ReverseGeocode
         /// </summary>
         /// <remark>Latitude of point</remark>
         [Required]
-        [DefaultValue(37.870662)]
+        [DefaultValue(47.3769)]
         [Range(-90, 90, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         [JsonPropertyName("Latitude")]
         public decimal lat { get; set; }
@@ -39,7 +39,7 @@ namespace SwaggerService.Core.Models.V2.ReverseGeocode
         /// </summary>
         /// <remark>Longitude of point</remark>
         [Required]
-        [DefaultValue(44.9803321)]
+        [DefaultValue(8.5417)]
         [Range(-180, 180, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         [JsonPropertyName("Longitude")]
         public decimal lon { get; set; }
@@ -50,7 +50,7 @@ namespace SwaggerService.Core.Models.V2.ReverseGeocode
         /// <remark>Level of detail required where 0 is country and 18 is house/building</remark>
         [Required]
         [DefaultValue(18)]
-        [Range(0, 18, ErrorMessage = "Value for {0} must be between {1} and {2}")]
+        // [Range(0, 18, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public int zoom { get; set; }
 
         /// <summary>

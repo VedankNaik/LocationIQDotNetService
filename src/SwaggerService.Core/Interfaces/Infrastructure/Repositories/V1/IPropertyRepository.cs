@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using SwaggerService.Core.Models.Features;
 using SwaggerService.Core.Models.V1.Property;
 using Microsoft.AspNetCore.Mvc;
 

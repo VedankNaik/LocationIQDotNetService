@@ -65,7 +65,7 @@ namespace SwaggerService.Infrastructure.Repositories.V1
             if (request.addressdetails) req.AddParameter("addressdetails", Convert.ToInt32(true));
             if (request.viewbox != null) req.AddParameter("viewbox", request.viewbox);
             if (request.bounded) req.AddParameter("bounded", Convert.ToInt32(false));
-            if (request.limit != 0) req.AddParameter("limit", request.limit);
+            if (request.limit > 0) req.AddParameter("limit", request.limit);
             if (request.acceptLanguage != null) req.AddParameter("accept-language", request.acceptLanguage);
             if (request.countrycodes != null) req.AddParameter("countrycodes", request.countrycodes);
             if (request.namedetails) req.AddParameter("namedetails", Convert.ToInt32(true));
@@ -101,10 +101,10 @@ namespace SwaggerService.Infrastructure.Repositories.V1
             var client = new RestSharp.RestClient(request.clientUrl);
             var req = new RestSharp.RestRequest(request.request);
             req.AddParameter("key", "pk.884091cb1c1f30ec8b84d4531540940e");
-            if (request.lat != 0) req.AddParameter("lat", request.lat);
-            if (request.lon != 0) req.AddParameter("lon", request.lon);
+            if (request.lat.ToString() != null) req.AddParameter("lat", request.lat);
+            if (request.lon.ToString() != null) req.AddParameter("lon", request.lon);
             if (request.format != null) req.AddParameter("format", request.format);
-            if (request.zoom > 0 && request.zoom <= 18) req.AddParameter("zoom", request.zoom);
+            if (request.zoom >= 0 && request.zoom <= 18) req.AddParameter("zoom", request.zoom);
             if (request.normalizecity) req.AddParameter("normalizecity", Convert.ToInt32(true));
             if (request.addressdetails) req.AddParameter("addressdetails", Convert.ToInt32(true));
             if (request.acceptLanguage != null) req.AddParameter("accept-language", request.acceptLanguage);
@@ -244,7 +244,7 @@ namespace SwaggerService.Infrastructure.Repositories.V1
             if (request.bearings != null) req.AddParameter("bearings", request.bearings);
             if (request.radiuses != null) req.AddParameter("radiuses", request.radiuses);
             if (request.generateHints) req.AddParameter("generate_hints", request.generateHints.ToString().ToLower());
-            if (request.number != 0) req.AddParameter("number", request.number);
+            if (request.number > 0) req.AddParameter("number", request.number);
         
             var res = client.Execute(req);
             var content = res.Content;

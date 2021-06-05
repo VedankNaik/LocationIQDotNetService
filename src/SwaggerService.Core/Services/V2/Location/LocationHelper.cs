@@ -7,8 +7,6 @@ using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V2;
 using SwaggerService.Core.Interfaces.Services.Service;
 using SwaggerService.Core.Interfaces.Services.V1.Property;
 using SwaggerService.Core.Interfaces.Services.V2.Location;
-using SwaggerService.Core.Models.Features;
-using SwaggerService.Core.Models.Service;
 using SwaggerService.Core.Models.V1.Property;
 using SwaggerService.Core.Models.V2.Autocomplete;
 using SwaggerService.Core.Models.V2.Balance;

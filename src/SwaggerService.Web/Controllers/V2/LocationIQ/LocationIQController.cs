@@ -1,16 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using SwaggerService.Core.Interfaces.Services.Service;
 using AutoMapper;
-using SwaggerService.Web.Models.V1.Service;
-using System.Collections.Generic;
 using SwaggerService.Core.Interfaces.Services.V2.Location;
 using SwaggerService.Web.Models.V2.ForwardGeocode;
 using SwaggerService.Web.Models.V2.ReverseGeocode;
 using SwaggerService.Web.Models.V2.Autocomplete;
 using SwaggerService.Web.Models.V2.Balance;
 using SwaggerService.Web.Models.V2.Directions;
-using System;
 using SwaggerService.Web.Models.V2.Nearest;
 using SwaggerService.Web.Models.V2.POI;
 
@@ -47,8 +43,7 @@ namespace SwaggerService.Web.Controllers.V2.LocationIQ
         public IActionResult ForwardGeocoding([FromQuery] ForwardGeocodeRequestDto search)
         {
             var res = _locationHelper.ForwardGeocodeList(search);
-            ForwardGeocodeResponseDto response = new ForwardGeocodeResponseDto();
-            response = Mapper.Map<ForwardGeocodeResponseDto>(res);
+            var response = Mapper.Map<ForwardGeocodeResponseDto>(res);
             if(response != null)
             {
                 return Ok(response);   
@@ -75,8 +70,7 @@ namespace SwaggerService.Web.Controllers.V2.LocationIQ
         public IActionResult ReverseGeocoding([FromQuery] ReverseGeocodeRequestDto search)
         {
             var res = _locationHelper.ReverseGeocodeObject(search);
-            ReverseGeocodeResponseDto response = new ReverseGeocodeResponseDto();
-            response = Mapper.Map<ReverseGeocodeResponseDto>(res);
+            var response = Mapper.Map<ReverseGeocodeResponseDto>(res);
             if(response != null)
             {
                 return Ok(response);   
@@ -103,8 +97,7 @@ namespace SwaggerService.Web.Controllers.V2.LocationIQ
         public IActionResult Autocomplete([FromQuery] AutocompleteRequestDto search)
         {
             var res = _locationHelper.AutocompleteList(search);
-            AutocompleteResponseDto response = new AutocompleteResponseDto();
-            response = Mapper.Map<AutocompleteResponseDto>(res);
+            var response = Mapper.Map<AutocompleteResponseDto>(res);
             if(response != null)
             {
                 return Ok(response);   
@@ -131,8 +124,7 @@ namespace SwaggerService.Web.Controllers.V2.LocationIQ
         public IActionResult Balance([FromQuery] BalanceRequestDto search)
         {
             var res = _locationHelper.Balance(search);
-            BalanceResponseDto response = new BalanceResponseDto();
-            response = Mapper.Map<BalanceResponseDto>(res);
+            var response = Mapper.Map<BalanceResponseDto>(res);
             if(response != null)
             {
                 return Ok(response);   
@@ -209,8 +201,7 @@ namespace SwaggerService.Web.Controllers.V2.LocationIQ
         public IActionResult Nearby([FromQuery] POIRequestDto search)
         {
             var res = _locationHelper.POI(search);
-            POIResponseDto response = new POIResponseDto();
-            response = Mapper.Map<POIResponseDto>(res);
+            var response = Mapper.Map<POIResponseDto>(res);
             if(response != null)
             {
                 return Ok(response);   

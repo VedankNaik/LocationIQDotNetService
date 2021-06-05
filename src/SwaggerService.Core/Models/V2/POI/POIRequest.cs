@@ -27,7 +27,7 @@ namespace SwaggerService.Core.Models.V2.POI
         /// </summary>
         /// <remark>Latitude of point</remark>
         [Required]
-        [DefaultValue(-37.870983)]
+        [DefaultValue(46.9440)]
         [Range(-90, 90, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         [JsonPropertyName("Latitude")]
         public decimal lat { get; set; }
@@ -37,7 +37,7 @@ namespace SwaggerService.Core.Models.V2.POI
         /// </summary>
         /// <remark>Longitude of point</remark>
         [Required]
-        [DefaultValue(144.980714)]
+        [DefaultValue(7.4493)]
         [Range(-180, 180, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         [JsonPropertyName("Longitude")]
         public decimal lon { get; set; }
@@ -47,7 +47,7 @@ namespace SwaggerService.Core.Models.V2.POI
         /// </summary>
         /// <remark>Limits the search to given radius in meters</remark>
         [DefaultValue(100)]
-        [Range(1, 30000, ErrorMessage = "Value for {0} must be between {1} and {2}")]
+        [Range(0, 30000, ErrorMessage = "Value for {0} must be between {1} and {2}")]
         public int radius { get; set; }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace SwaggerService.Core.Models.V2.POI
         /// </summary>
         /// <remark>Number of results to return</remark>
         [DefaultValue(10)]
-        [Range(1, 50, ErrorMessage = "Max value is 50")]
+        [Range(0, 50, ErrorMessage = "Max value is 50")]
         public int limit { get; set; }
 
         /// <summary>
