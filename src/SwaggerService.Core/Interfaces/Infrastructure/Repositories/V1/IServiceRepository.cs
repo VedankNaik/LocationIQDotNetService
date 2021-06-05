@@ -13,7 +13,7 @@ namespace SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1
         /// <summary>
         /// GetServices
         /// </summary>
-        /// <param name=""></param>
+        ///
         /// <returns></returns>
         IEnumerable<ServiceResponse> GetServices();        
         

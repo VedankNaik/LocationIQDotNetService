@@ -22,7 +22,7 @@ namespace SwaggerService.Core.Services.Service
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="featureRepository"></param>
+        /// <param name="serviceRepository"></param>
         public ServiceHelper(IServiceRepository serviceRepository)
         {
             _serviceRepository = serviceRepository;
@@ -38,7 +38,7 @@ namespace SwaggerService.Core.Services.Service
         /// <summary>
         /// GetAllService
         /// </summary>
-        /// <param name=""></param>
+        ///
         /// <returns></returns>
         public IEnumerable<ServiceResponse> GetAllServices()
         {    

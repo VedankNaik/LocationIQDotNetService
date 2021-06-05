@@ -38,7 +38,7 @@ namespace SwaggerService.Core.Services.V1.Property
         /// <summary>
         /// GetAllService
         /// </summary>
-        /// <param name=""></param>
+        ///
         /// <returns></returns>
         public IEnumerable<PropertyResponse> GetAllProperties()
         {    

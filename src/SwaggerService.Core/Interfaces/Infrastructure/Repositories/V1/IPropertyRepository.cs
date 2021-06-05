@@ -14,7 +14,7 @@ namespace SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1
         /// <summary>
         /// GetProperties
         /// </summary>
-        /// <param name=""></param>
+        ///
         /// <returns></returns>
         IEnumerable<PropertyResponse> GetProperties();
 
@@ -28,9 +28,7 @@ namespace SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1
         /// <summary>
         /// AddProperty
         /// </summary>
-        /// <param name="address"></param>
-        /// <param name="ownerName"></param>
-        /// <param name="price"></param>
+        /// <param name="property"></param>
         /// <returns></returns>
         string AddProperty(PropertyRequest property);
 
@@ -38,9 +36,7 @@ namespace SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1
         /// <summary>
         /// UpdateProperty
         /// </summary>
-        /// <param name="address"></param>
-        /// <param name="ownerName"></param>
-        /// <param name="price"></param>
+        /// <param name="property"></param>
         /// <returns></returns>
         string UpdateProperty(PropertyRequest property);
 

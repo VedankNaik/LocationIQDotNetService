@@ -14,7 +14,7 @@ namespace SwaggerService.Core.Interfaces.Services.Service
         /// <summary>
         /// GetFeatures
         /// </summary>
-        /// <param name="serviceGetRequest"></param>
+        /// 
         /// <returns></returns>
         IEnumerable<ServiceResponse> GetAllServices();        
 
