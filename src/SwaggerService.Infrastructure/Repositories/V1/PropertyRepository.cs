@@ -1,13 +1,10 @@
-using Microsoft.EntityFrameworkCore;
 using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1;
 using Microsoft.Data.SqlClient;
-using System;
 using AutoMapper;
 using System.Data;
 using System.Collections.Generic;
 using Dapper;
 using SwaggerService.Core.Models.V1.Property;
-using Microsoft.AspNetCore.Mvc;
 
 namespace SwaggerService.Infrastructure.Repositories.V1
 {
@@ -20,10 +17,7 @@ namespace SwaggerService.Infrastructure.Repositories.V1
 
         protected readonly IMapper Mapper;
 
-        private string connectionString;
-
-        SqlConnection _con;
-
+        private readonly string connectionString;
 
         #endregion
 
@@ -52,20 +46,6 @@ namespace SwaggerService.Infrastructure.Repositories.V1
         #endregion
 
         #region Public methods
-
-        public SqlConnection GetConnection()
-        {
-            try
-            {
-                SqlConnection _con = new SqlConnection("Data Source=DESKTOP-TSP81E7\\SQLEXPRESS;Initial Catalog=mydb;Integrated Security=True");
-                _con.Open();
-                return _con;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
 
         public IEnumerable<PropertyResponse> GetProperties()
         {

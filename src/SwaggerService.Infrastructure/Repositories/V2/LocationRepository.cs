@@ -1,13 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1;
-using Microsoft.Data.SqlClient;
 using System;
 using AutoMapper;
-using System.Data;
 using System.Collections.Generic;
-using Dapper;
-using SwaggerService.Core.Models.V1.Property;
-using Microsoft.AspNetCore.Mvc;
 using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V2;
 using SwaggerService.Core.Models.V2.ForwardGeocode;
 using Newtonsoft.Json;

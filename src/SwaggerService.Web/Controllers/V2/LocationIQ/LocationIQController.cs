@@ -10,8 +10,6 @@ using SwaggerService.Web.Models.V2.Directions;
 using SwaggerService.Web.Models.V2.Nearest;
 using SwaggerService.Web.Models.V2.POI;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace SwaggerService.Web.Controllers.V2.LocationIQ
 {
     // [Route("api/v{version:apiversion}/[controller]")]
@@ -121,8 +119,9 @@ namespace SwaggerService.Web.Controllers.V2.LocationIQ
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public IActionResult Balance([FromQuery] BalanceRequestDto search)
+        public IActionResult Balance()
         {
+            var search = new BalanceRequestDto();
             var res = _locationHelper.Balance(search);
             var response = Mapper.Map<BalanceResponseDto>(res);
             if(response != null)

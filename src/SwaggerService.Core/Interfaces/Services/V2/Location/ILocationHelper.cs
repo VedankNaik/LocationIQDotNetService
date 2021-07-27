@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using SwaggerService.Core.Models.V1.Property;
 using SwaggerService.Core.Models.V2.Autocomplete;
 using SwaggerService.Core.Models.V2.Balance;
 using SwaggerService.Core.Models.V2.Directions;

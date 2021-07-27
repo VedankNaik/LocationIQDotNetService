@@ -1,16 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using SwaggerService.Core.Interfaces.Services.Service;
 using AutoMapper;
-using SwaggerService.Web.Models.V1.Service;
 using System.Collections.Generic;
 using SwaggerService.Core.Interfaces.Services.V1.Property;
 using SwaggerService.Web.Models.V1.Property;
-using System.Net.Http;
-using System.Net;
-
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace SwaggerService.Web.Controllers.V1.Property
 {

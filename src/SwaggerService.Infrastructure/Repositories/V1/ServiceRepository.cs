@@ -1,7 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using SwaggerService.Core.Models.Service;
 using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1;
-using MySql.Data.MySqlClient;
 using Microsoft.Data.SqlClient;
 using System;
 using AutoMapper;

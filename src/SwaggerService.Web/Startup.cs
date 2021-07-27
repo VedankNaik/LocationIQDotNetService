@@ -9,7 +9,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1;
 using SwaggerService.Infrastructure.Repositories.V1;
-using Microsoft.EntityFrameworkCore;
 using SwaggerService.Core.Interfaces.Services.Service;
 using SwaggerService.Core.Services.Service;
 using SwaggerService.Core.Interfaces.Services.V1.Property;
@@ -19,6 +18,9 @@ using System.Linq;
 using SwaggerService.Core.Interfaces.Services.V2.Location;
 using SwaggerService.Core.Services.V2.Location;
 using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V2;
+using SwaggerService.Core.Interfaces.Services.V3.DB;
+using SwaggerService.Core.Interfaces.Infrastructure.Repositories.V3;
+using System.Text.Json.Serialization;
 
 namespace SwaggerService.Web
 {
@@ -35,7 +37,15 @@ namespace SwaggerService.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // services.AddControllers();
+            services.AddCors(c =>  
+            {  
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());  
+            }); 
             services.AddMvc();
+            services.AddMvc()
+             .AddJsonOptions(options => {
+                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
+            });
             services.AddAutoMapper(typeof(Startup));
           
             // services.AddDbContext<ServiceRepository>(db => db.UseSqlServer(Configuration.GetConnectionString("mydb")));
@@ -48,6 +58,9 @@ namespace SwaggerService.Web
             services.AddScoped<ILocationHelper,LocationHelper>();
             services.AddScoped<ILocationRepository,LocationRepository>();
 
+            services.AddScoped<IDBHelper,DBHelper>();
+            services.AddScoped<IDBRepository,DBRepository>();
+
             services.AddApiVersioning(v =>{
                 v.AssumeDefaultVersionWhenUnspecified = true;
                 v.DefaultApiVersion = new ApiVersion(1,0);
@@ -58,21 +71,21 @@ namespace SwaggerService.Web
                 {
                     Version = "V1",
                     Title = "Database API",
-                    Description = "Fetch database information",  
+                    Description = "CRUD operations",  
                 });
 
                options.SwaggerDoc("V2", new OpenApiInfo
                 {
                     Version = "V2",
                     Title = "Location API",
-                    Description = "Call LocationIQ",  
+                    Description = "Call LocationIQ API",  
                 }); 
 
                 options.SwaggerDoc("V3", new OpenApiInfo
                 {
                     Version = "V3",
-                    Title = "Service API",
-                    Description = "Servvices",  
+                    Title = "Validate database values",
+                    Description = "Perform validations",  
                 });
                 
                 options.ResolveConflictingActions(a => a.First());
@@ -97,6 +110,7 @@ namespace SwaggerService.Web
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {

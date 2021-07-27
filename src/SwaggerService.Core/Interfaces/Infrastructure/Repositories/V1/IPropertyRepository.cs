@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using SwaggerService.Core.Models.V1.Property;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace SwaggerService.Core.Interfaces.Infrastructure.Repositories.V1
 {
