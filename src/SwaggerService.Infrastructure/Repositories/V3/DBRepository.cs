@@ -228,7 +228,7 @@ namespace SwaggerService.Infrastructure.Repositories.V1
                                 geoResponse.Status = restResponse.StatusCode.ToString();
                                 var result = geoResponse.SearchResponse;
 
-                                string insertQuery = string.Format("INSERT INTO {0}([RefID], [City], [OldLatitude], [OldLongitude], [PlaceID], [NewLatitude] ,[NewLongitude], [DisplayName], [Importance]) VALUES (@ID, @city, @latitude, @longitude, @place_id, @Lat, @Lon, @display_name, @Importance)", insertTable);
+                                string insertQuery = string.Format("INSERT INTO {0}([RefID], [City], [OldLatitude], [OldLongitude], [PlaceID], [NewLatitude] ,[NewLongitude], [DisplayName]) VALUES (@ID, @city, @latitude, @longitude, @place_id, @Lat, @Lon, @display_name)", insertTable);
                                 var execute = dbConnection.Execute(insertQuery, new
                                 {
                                     queryResponse[i].ID,

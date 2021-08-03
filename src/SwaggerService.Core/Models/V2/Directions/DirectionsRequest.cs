@@ -50,7 +50,7 @@ namespace SwaggerService.Core.Models.V2.Directions
         /// </summary>
         /// <remark>Adds a Hint to the response which can be used in subsequent requests</remark>
         [DefaultValue("true")]
-        [RegularExpression("true|false", ErrorMessage = "generateHints can take any one of following values: true, false")]
+        // [RegularExpression("true|false", ErrorMessage = "generateHints can take any one of following values: true, false")]
         public bool generateHints { get; set; }
 
         /// <summary>

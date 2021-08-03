@@ -202,7 +202,7 @@ namespace SwaggerService.Infrastructure.Repositories.V1
             req.AddParameter("key", "pk.884091cb1c1f30ec8b84d4531540940e");
             if (request.bearings != null) req.AddParameter("bearings", request.bearings);
             if (request.radiuses != null) req.AddParameter("radiuses", request.radiuses);
-            if (request.generateHints) req.AddParameter("generate_hints", request.generateHints.ToString().ToLower());
+            // if (request.generateHints) req.AddParameter("generate_hints", request.generateHints);
             if (request.exclude != null) req.AddParameter("exclude", request.exclude);
             if (request.alternatives != 0) req.AddParameter("alternatives", request.alternatives);
             if (request.steps) req.AddParameter("steps", request.steps.ToString().ToLower());
